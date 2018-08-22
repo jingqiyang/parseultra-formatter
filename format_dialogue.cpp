@@ -88,7 +88,21 @@ void parse_speaker(ifstream &fin, ofstream &fout, string speaker)
 
     //remove colon and convert non-leading chars to lowercase
     speaker.pop_back();
-    transform(speaker.begin()+1, speaker.end(), speaker.begin()+1, ::tolower);
+    bool reached_letters = false;
+    for (int i = 0; i < speaker.length(); i++)
+    {
+        if (reached_letters)
+        {
+            speaker[i] = tolower(speaker[i]);
+        }
+        //account for invisible chars
+        else if ((speaker[i] >= 'A' && speaker[i] <= 'Z') ||
+                 (speaker[i] >= 'a' && speaker[i] <= 'z'))
+        {
+            reached_letters = true;
+            speaker[i] = toupper(speaker[i]);
+        }
+    }
 
     fout << "[" << speaker << "] #filler_pos# |filler_exp| ";
 }

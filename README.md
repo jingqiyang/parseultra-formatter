@@ -4,8 +4,6 @@ Purpose: Convert a dialogue file as much as possible to the ParseUltra dialogue 
 
 The program has been compiled to the executable named *format*. Run the program with the command `./format [filename.txt]`. The program will create a new file named *[filename]_formatted.txt*.
 
-Unfortunately the very first speaker name will not be capitalized. To be fixed later!
-
 Assumptions:
 * The input file name is assumed to be a .txt file
 * Every line in the file is assumed to either be empty, or be in the format "SPEAKER: line"
