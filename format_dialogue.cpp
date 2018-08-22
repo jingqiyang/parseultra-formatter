@@ -116,7 +116,7 @@ void parse_line(ifstream &fin, ofstream &fout, string speaker)
         {
             line.erase(0, 1);
         }
-        if (line[line.length() - 1] == '\n')
+        if (!fin.eof())
         {
             line.pop_back();
         }
