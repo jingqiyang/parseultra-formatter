@@ -56,17 +56,6 @@ void format(ifstream &fin, ofstream &fout)
 {
     string curr;
 
-    //format very first line (special case for first speaker)
-    fin >> curr;
-    while (curr[0] < 65 || (curr[0] > 90 && curr[0] < 97) || curr[0] > 122)
-    {
-        curr.erase(0, 1);
-    }
-    fout << "=\n\n";
-    parse_speaker(fin, fout, curr);
-    parse_line(fin, fout, curr);
-
-    //format rest of document
     while (fin >> curr)
     {
         fout << "=\n\n";
