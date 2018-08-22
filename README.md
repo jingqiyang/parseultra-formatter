@@ -2,11 +2,7 @@
 
 Purpose: Convert a dialogue file as much as possible to the ParseUltra dialogue format, with filler text to be replaced after.
 
-The program has been compiled to the executable named "format"
-
-Run the program with the command: ./format [filename.txt]
-
-The program will create a new file named "[filename]_formatted.txt"
+The program has been compiled to the executable named _format_. Run the program with the command `./format [filename.txt]`. The program will create a new file named _[filename]_formatted.txt_.
 
 Assumptions:
 * The input file name is assumed to be a .txt file
