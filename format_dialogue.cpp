@@ -114,17 +114,13 @@ void parse_line(ifstream &fin, ofstream &fout, string speaker)
     //add dialogue line + assume at least 1 secondary char in frame
     if (getline(fin, line))
     {
-        //remove extra space at beginning + new line at end
-        if (line[0] == ' ')
-        {
-            line.erase(0, 1);
-        }
+        //remove extra new line at end
         if (!fin.eof())
         {
             line.pop_back();
         }
 
-        fout << "{ " << line << " }\n"
+        fout << "{ " << speaker << line << " }\n"
              << "[filler_char] #filler_pos# |filler_exp|\n\n";
     }
     else
